@@ -78,7 +78,7 @@ body {
 
 .nav-item-restaurants .restaurant-dropdown {
     position: absolute;
-    top: calc(100% + 0.5em);
+    top: 100%;
     left: 50%;
     transform: translate(-50%, -0.35em);
     opacity: 0;
