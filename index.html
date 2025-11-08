@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegan and Vegetarian Association of Georgia and Armenia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Vegan and Vegetarian Association of Georgia and Armenia</h1>
+        <nav>
+            <ul class="language-switcher">
+                <li><button onclick="setLanguage('en')">English</button></li>
+                <li><button onclick="setLanguage('ru')">Русский</button></li>
+                <li><button onclick="setLanguage('ka')">[translate:ქართული]</button></li>
+                <li><button onclick="setLanguage('hy')">[translate:Հայերեն]</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content">
+        <p class="lang en">Welcome to the Vegan and Vegetarian Association of Georgia and Armenia. We promote plant-based living and sustainable agriculture.</p>
+        <p class="lang ru" style="display:none;">Добро пожаловать в Веганское и Вегетарианское Объединение Грузии и Армении. Мы продвигаем растительный образ жизни и устойчивое сельское хозяйство.</p>
+        <p class="lang ka" style="display:none;">[translate:მოგესალმებით საქართველოსა და Հայաստանի ვეგან და ვეგეტარიანელთა ასოციაციაში. ჩვენ ვუჭერთ მხარს მცენარეულს ცხოვრებას და მდგრად სოფლის მეურნეობას.]</p>
+        <p class="lang hy" style="display:none;">[translate:Բարի գալուստ Վեգան և Վեգետարիական Ասոցիացիա Հայաստանի և Վրաստանի: Մենք խթանում ենք բուսակեր ապրելակերպը և կայուն գյուղատնտեսությունը:]</p>
+    </section>
+
+<script>
+function setLanguage(lang) {
+    var elements = document.querySelectorAll('.lang');
+    elements.forEach(function(element) {
+        element.style.display = 'none';
+    });
+    var selected = document.querySelectorAll('.lang.' + lang);
+    selected.forEach(function(element) {
+        element.style.display = 'block';
+    });
+}
+</script>
+
+</body>
+</html>
