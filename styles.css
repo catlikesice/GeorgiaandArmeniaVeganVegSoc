@@ -76,11 +76,11 @@ body {
     align-self: center;
 }
 
-.nav-item-restaurants .restaurant-dropdown {
+ .nav-item-restaurants .restaurant-dropdown {
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translate(-50%, -0.35em);
+    transform: translate(-50%, 0);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -102,8 +102,8 @@ body {
     background-color: #f6fff8;
 }
 
-.nav-item-restaurants:hover .restaurant-dropdown,
-.nav-item-restaurants:focus-within .restaurant-dropdown {
+ .nav-item-restaurants:hover .restaurant-dropdown,
+ .nav-item-restaurants:focus-within .restaurant-dropdown {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
