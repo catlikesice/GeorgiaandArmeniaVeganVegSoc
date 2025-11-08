@@ -10,17 +10,42 @@
     <header class="site-header">
         <div class="header-inner">
             <div class="brand">
-                <h1>Yerevan Vegetarian Dining Guide</h1>
-                <p>Curated by the Vegan and Vegetarian Association of Georgia and Armenia.</p>
+                <h1>Vegan and Vegetarian Association of Georgia and Armenia</h1>
+                <p>Yerevan Vegetarian Dining Guide · Curated by the Association.</p>
             </div>
-            <nav class="association-nav" aria-label="Dining navigation">
+            <nav class="association-nav" aria-label="Primary Navigation">
                 <ul class="nav-links">
-                    <li><a href="index.html">Association Home</a></li>
-                    <li><a href="#featured">Featured</a></li>
-                    <li><a href="#top-spots">Top Spots</a></li>
-                    <li><a href="#plan">Plan Your Visit</a></li>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#programs">Programs</a></li>
+                    <li><a href="index.html#events">Events</a></li>
+                    <li class="nav-item nav-item-restaurants">
+                        <a href="index.html#restaurants">Restaurants</a>
+                        <div class="restaurant-dropdown">
+                            <label for="restaurant-city" class="sr-only">Choose a city to view featured restaurants</label>
+                            <select id="restaurant-city" name="restaurant-city" aria-label="Choose a city to view featured restaurants">
+                                <option value="" disabled>Select a city</option>
+                                <option value="tbilisi">Tbilisi</option>
+                                <option value="kutaisi">Kutaisi</option>
+                                <option value="batumi">Batumi</option>
+                                <option value="yerevan" selected>Yerevan</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li><a href="index.html#recipes">Recipes</a></li>
+                    <li><a href="index.html#membership">Membership</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </nav>
+            <div class="language-select">
+                <label for="language-selector" class="sr-only">Select language</label>
+                <select id="language-selector" onchange="setLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="ru">Русский</option>
+                    <option value="ka">ქართული</option>
+                    <option value="hy">Հայերեն</option>
+                </select>
+            </div>
         </div>
     </header>
 
@@ -230,5 +255,42 @@
     <footer class="site-footer">
         <p>Looking for more plant-based destinations? Explore regional partners through the <a class="text-link" href="index.html">Vegan and Vegetarian Association</a>.</p>
     </footer>
+
+    <script>
+    function setLanguage(lang) {
+        var elements = document.querySelectorAll('.lang');
+        elements.forEach(function(element) {
+            element.style.display = 'none';
+        });
+        var selected = document.querySelectorAll('.lang.' + lang);
+        selected.forEach(function(element) {
+            element.style.display = 'block';
+        });
+
+        var selector = document.getElementById('language-selector');
+        if (selector && selector.value !== lang) {
+            selector.value = lang;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        setLanguage('en');
+
+        var citySelector = document.getElementById('restaurant-city');
+        if (citySelector) {
+            if (!citySelector.value) {
+                citySelector.value = 'yerevan';
+            }
+            citySelector.addEventListener('change', function(event) {
+                var city = event.target.value;
+                if (city === 'tbilisi') {
+                    window.location.href = 'tbilisi-restaurants.html';
+                } else if (city === 'yerevan') {
+                    window.location.href = 'restaurants-yerevan.html';
+                }
+            });
+        }
+    });
+    </script>
 </body>
 </html>
