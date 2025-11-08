@@ -7,37 +7,101 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Vegan and Vegetarian Association of Georgia and Armenia</h1>
-        <nav>
-            <ul class="language-switcher">
-                <li><button onclick="setLanguage('en')">English</button></li>
-                <li><button onclick="setLanguage('ru')">Русский</button></li>
-                <li><button onclick="setLanguage('ka')">[translate:ქართული]</button></li>
-                <li><button onclick="setLanguage('hy')">[translate:Հայերեն]</button></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">
+                <h1>Vegan and Vegetarian Association of Georgia and Armenia</h1>
+                <p>Nurturing compassionate, plant-based communities.</p>
+            </div>
+            <nav class="association-nav" aria-label="Primary Navigation">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#recipes">Recipes</a></li>
+                    <li><a href="#membership">Membership</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="language-select">
+                <label for="language-selector" class="sr-only">Select language</label>
+                <select id="language-selector" onchange="setLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="ru">Русский</option>
+                    <option value="ka">ქართული</option>
+                    <option value="hy">Հայերեն</option>
+                </select>
+            </div>
+        </div>
     </header>
 
-    <section class="content">
-        <p class="lang en">Welcome to the Vegan and Vegetarian Association of Georgia and Armenia. We promote plant-based living and sustainable agriculture.</p>
-        <p class="lang ru" style="display:none;">Добро пожаловать в Веганское и Вегетарианское Объединение Грузии и Армении. Мы продвигаем растительный образ жизни и устойчивое сельское хозяйство.</p>
-        <p class="lang ka" style="display:none;">[translate:მოგესალმებით საქართველოსა და Հայաստանի ვეგან და ვეგეტარიანელთა ასოციაციაში. ჩვენ ვუჭერთ მხარს მცენარეულს ცხოვრებას და მდგრად სოფლის მეურნეობას.]</p>
-        <p class="lang hy" style="display:none;">[translate:Բարի գալուստ Վեգան և Վեգետարիական Ասոցիացիա Հայաստանի և Վրաստանի: Մենք խթանում ենք բուսակեր ապրելակերպը և կայուն գյուղատնտեսությունը:]</p>
-    </section>
+    <main class="main-content">
+        <section id="home" class="page-section">
+            <h2>Welcome</h2>
+            <p class="lang en">Welcome to the Vegan and Vegetarian Association of Georgia and Armenia. We promote plant-based living and sustainable agriculture.</p>
+            <p class="lang ru" style="display:none;">Добро пожаловать в Веганское и Вегетарианское Объединение Грузии и Армении. Мы продвигаем растительный образ жизни и устойчивое сельское хозяйство.</p>
+            <p class="lang ka" style="display:none;">მოგესალმებით საქართველოსა და სომხეთის ვეგან და ვეგეტარიანელთა ასოციაციაში. ჩვენ ვუჭერთ მხარს მცენარეულ ცხოვრებას და მდგრად სოფლის მეურნეობას.</p>
+            <p class="lang hy" style="display:none;">Բարի գալուստ Վեգան և Վեգետարիական Ասոցիացիա Հայաստանի և Վրաստանի։ Մենք խթանում ենք բուսակեր ապրելակերպը և կայուն գյուղատնտեսությունը։</p>
+        </section>
 
-<script>
-function setLanguage(lang) {
-    var elements = document.querySelectorAll('.lang');
-    elements.forEach(function(element) {
-        element.style.display = 'none';
-    });
-    var selected = document.querySelectorAll('.lang.' + lang);
-    selected.forEach(function(element) {
-        element.style.display = 'block';
-    });
-}
-</script>
+        <section id="about" class="page-section">
+            <h2>About the Association</h2>
+            <p>We collaborate with local advocates, nutritionists, farmers, and policymakers to expand access to ethical, plant-centered food systems across the Caucasus region.</p>
+        </section>
 
+        <section id="programs" class="page-section">
+            <h2>Programs &amp; Initiatives</h2>
+            <p>Our core programs include school outreach, culinary training for restaurants, farm partnerships, and public education campaigns that highlight the benefits of plant-forward living.</p>
+        </section>
+
+        <section id="events" class="page-section">
+            <h2>Events &amp; Gatherings</h2>
+            <p>Seasonal markets, urban garden tours, film screenings, and volunteer meetups help us build supportive networks and celebrate sustainable food traditions.</p>
+        </section>
+
+        <section id="resources" class="page-section">
+            <h2>Resources &amp; Publications</h2>
+            <p>Find research briefs, policy toolkits, and multilingual guides designed to help communities adopt plant-based practices with confidence.</p>
+        </section>
+
+        <section id="recipes" class="page-section">
+            <h2>Recipes &amp; Nutrition</h2>
+            <p>We share culturally diverse meal plans, chef-developed recipes, and nutrition tips for every stage of life.</p>
+        </section>
+
+        <section id="membership" class="page-section">
+            <h2>Membership &amp; Volunteers</h2>
+            <p>Members receive advocacy updates, training opportunities, and resources to lead local initiatives. Join a volunteer circle or start a chapter in your city.</p>
+        </section>
+
+        <section id="contact" class="page-section">
+            <h2>Contact &amp; Partnerships</h2>
+            <p>Connect with us to collaborate on community programs, request media interviews, or become a sponsoring partner.</p>
+        </section>
+    </main>
+
+    <script>
+    function setLanguage(lang) {
+        var elements = document.querySelectorAll('.lang');
+        elements.forEach(function(element) {
+            element.style.display = 'none';
+        });
+        var selected = document.querySelectorAll('.lang.' + lang);
+        selected.forEach(function(element) {
+            element.style.display = 'block';
+        });
+
+        var selector = document.getElementById('language-selector');
+        if (selector && selector.value !== lang) {
+            selector.value = lang;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        setLanguage('en');
+    });
+    </script>
 </body>
 </html>
