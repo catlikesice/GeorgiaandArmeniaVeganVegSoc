@@ -19,7 +19,18 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#programs">Programs</a></li>
                     <li><a href="#events">Events</a></li>
-                    <li><a href="#restaurants">Restaurants</a></li>
+                    <li class="nav-item nav-item-restaurants">
+                        <a href="#restaurants">Restaurants</a>
+                        <div class="restaurant-dropdown">
+                            <label for="restaurant-city" class="sr-only">Choose a city to view featured restaurants</label>
+                            <select id="restaurant-city" name="restaurant-city">
+                                <option value="tbilisi">Tbilisi</option>
+                                <option value="kutaisi">Kutaisi</option>
+                                <option value="batumi">Batumi</option>
+                                <option value="yerevan">Yerevan</option>
+                            </select>
+                        </div>
+                    </li>
                     <li><a href="#recipes">Recipes</a></li>
                     <li><a href="#membership">Membership</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -64,15 +75,6 @@
         <section id="restaurants" class="page-section">
             <h2>Restaurants</h2>
             <p>Explore our trusted network of plant-forward dining partners across the region.</p>
-            <div class="restaurant-dropdown">
-                <label for="restaurant-city" class="sr-only">Choose a city to view featured restaurants</label>
-                <select id="restaurant-city" name="restaurant-city">
-                    <option value="tbilisi">Tbilisi</option>
-                    <option value="kutaisi">Kutaisi</option>
-                    <option value="batumi">Batumi</option>
-                    <option value="yerevan">Yerevan</option>
-                </select>
-            </div>
         </section>
 
         <section id="recipes" class="page-section">
