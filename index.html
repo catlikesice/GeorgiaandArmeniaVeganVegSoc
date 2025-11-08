@@ -112,6 +112,15 @@
 
     document.addEventListener('DOMContentLoaded', function() {
         setLanguage('en');
+
+        var citySelector = document.getElementById('restaurant-city');
+        if (citySelector) {
+            citySelector.addEventListener('change', function(event) {
+                if (event.target.value === 'tbilisi') {
+                    window.location.href = 'tbilisi-restaurants.html';
+                }
+            });
+        }
     });
     </script>
 </body>
