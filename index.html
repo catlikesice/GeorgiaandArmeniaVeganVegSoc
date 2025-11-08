@@ -117,8 +117,11 @@
         var citySelector = document.getElementById('restaurant-city');
         if (citySelector) {
             citySelector.addEventListener('change', function(event) {
-                if (event.target.value === 'tbilisi') {
+                var city = event.target.value;
+                if (city === 'tbilisi') {
                     window.location.href = 'tbilisi-restaurants.html';
+                } else if (city === 'yerevan') {
+                    window.location.href = 'restaurants-yerevan.html';
                 }
             });
         }
