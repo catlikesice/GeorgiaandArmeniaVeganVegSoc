@@ -1,0 +1,45 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f9f4;
+    color: #333;
+}
+
+header {
+    background-color: #4caf50;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+.language-switcher {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.language-switcher button {
+    background: white;
+    border: 1px solid #4caf50;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #4caf50;
+    transition: background 0.3s ease;
+}
+
+.language-switcher button:hover {
+    background-color: #45a049;
+    color: white;
+}
+
+.content {
+    max-width: 600px;
+    margin: 2em auto;
+    padding: 1em;
+}
