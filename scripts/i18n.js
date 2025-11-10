@@ -1840,4 +1840,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-window.setLanguage = (lang, options) => setLanguage(lang, options);
+const setLanguageInternal = setLanguage;
+
+window.setLanguage = (lang, options) => setLanguageInternal(lang, options);
