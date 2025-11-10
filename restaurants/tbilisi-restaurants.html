@@ -281,12 +281,18 @@
             if (!citySelector.value) {
                 citySelector.value = 'tbilisi';
             }
+
+            var cityPaths = {
+                tbilisi: 'tbilisi-restaurants.html',
+                kutaisi: 'kutaisi-restaurants.html',
+                batumi: 'batumi-restaurants.html',
+                yerevan: 'yerevan-restaurants.html'
+            };
+
             citySelector.addEventListener('change', function(event) {
                 var city = event.target.value;
-                if (city === 'tbilisi') {
-                    window.location.href = 'tbilisi-restaurants.html';
-                } else if (city === 'yerevan') {
-                    window.location.href = 'restaurants-yerevan.html';
+                if (cityPaths[city]) {
+                    window.location.href = cityPaths[city];
                 }
             });
         }
