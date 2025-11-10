@@ -2287,6 +2287,14 @@ function applyTranslations(lang) {
     if (!key) {
       return;
     }
+    if (
+      element.tagName === "OPTION" &&
+      element.parentElement &&
+      element.parentElement.id === "language-selector" &&
+      key.startsWith("common.language.")
+    ) {
+      return;
+    }
     const translation = getTranslation(lang, key);
     if (translation !== undefined) {
       updateElementContent(element, translation);
