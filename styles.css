@@ -16,11 +16,10 @@ body {
 .header-inner {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) minmax(0, 1fr) auto;
+    align-items: start;
     gap: 2rem;
-    flex-wrap: wrap;
 }
 
 .brand h1 {
@@ -36,6 +35,7 @@ body {
 
 .association-nav {
     flex: 1 1 auto;
+    min-width: 0;
 }
 
 .nav-links {
@@ -166,6 +166,7 @@ body {
     background: rgba(255, 255, 255, 0.15);
     padding: 0.4em 0.75em;
     border-radius: 999px;
+    justify-self: end;
 }
 
 .language-select select {
@@ -318,12 +319,13 @@ body {
 
 @media (max-width: 960px) {
     .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
+        grid-template-columns: 1fr;
+        align-items: stretch;
     }
 
     .association-nav {
         width: 100%;
+        justify-self: stretch;
     }
 
     .nav-links {
@@ -331,7 +333,8 @@ body {
     }
 
     .language-select {
-        align-self: flex-start;
+        align-self: start;
+        justify-self: start;
     }
 }
 
