@@ -46,6 +46,7 @@ body {
     flex-wrap: wrap;
     gap: 0.75em;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .nav-links a {
@@ -79,8 +80,9 @@ body {
 .nav-item-membership {
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 0.35em;
 }
 
 .nav-item-membership > a {
@@ -88,26 +90,18 @@ body {
 }
 
 .nav-item-membership .nav-submenu {
-    position: absolute;
-    top: calc(100% + 0.35em);
-    left: 50%;
-    transform: translate(-50%, -0.35em);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 0.75em;
+    display: none;
     margin: 0;
     list-style: none;
+    padding: 0.75em;
     border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
     backdrop-filter: blur(6px);
     min-width: 180px;
-    display: flex;
     flex-direction: column;
     gap: 0.25em;
     z-index: 25;
-    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .nav-item-membership .nav-submenu a {
@@ -128,10 +122,7 @@ body {
 
 .nav-item-membership:hover .nav-submenu,
 .nav-item-membership:focus-within .nav-submenu {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translate(-50%, 0);
+    display: flex;
 }
 
  .nav-item-restaurants .restaurant-dropdown {
@@ -318,11 +309,7 @@ body {
     }
 
     .nav-item-membership .nav-submenu {
-        position: static;
-        transform: none;
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
+        display: flex;
         margin-top: 0.75em;
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
         backdrop-filter: none;
