@@ -2283,6 +2283,10 @@ function updateElementContent(element, value) {
 function applyTranslations(lang) {
   const elements = document.querySelectorAll("[data-i18n-key]");
   elements.forEach((element) => {
+    if (element.hasAttribute("data-i18n-skip")) {
+      return;
+    }
+
     const key = element.getAttribute("data-i18n-key");
     if (!key) {
       return;
