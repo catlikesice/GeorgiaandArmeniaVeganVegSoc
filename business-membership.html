@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Membership | Ethical Food Association</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts/i18n.js" defer></script>
+</head>
+<body data-page="business-membership">
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">
+                <h1>Ethical Food Association of Georgia and Armenia</h1>
+                <p>Partnering with plant-forward, fair trade, and sustainable businesses across the region.</p>
+            </div>
+            <nav class="association-nav" aria-label="Primary Navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#events">Events</a></li>
+                    <li class="nav-item nav-item-restaurants">
+                        <a href="index.html#restaurants">Restaurants</a>
+                        <div class="restaurant-dropdown">
+                            <label for="restaurant-city" class="sr-only">Choose a city to view featured restaurants</label>
+                            <select id="restaurant-city" name="restaurant-city" aria-label="Choose a city to view featured restaurants">
+                                <option value="" disabled selected>Select a city</option>
+                                <option value="tbilisi">Tbilisi</option>
+                                <option value="kutaisi">Kutaisi</option>
+                                <option value="batumi">Batumi</option>
+                                <option value="yerevan">Yerevan</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li><a href="index.html#recipes">Recipes</a></li>
+                    <li class="nav-item nav-item-membership">
+                        <a href="business-membership.html" aria-current="page">Business Membership</a>
+                        <ul class="nav-submenu">
+                            <li><a href="#tiers">Membership Tiers</a></li>
+                            <li><a href="#next-steps">Next Steps</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="language-select">
+                <label for="language-selector" class="sr-only">Select language</label>
+                <select id="language-selector">
+                    <option value="en" selected>English</option>
+                    <option value="ru">Русский</option>
+                    <option value="ka">ქართული</option>
+                    <option value="hy">Հայերեն</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="page-section">
+            <h2>Invest in Impactful Partnerships</h2>
+            <p>Our business membership program connects your team with regional advocates, policy leaders, and ethical supply chain partners who are expanding plant-based, fair trade, organic, and sustainable practices across Georgia and Armenia.</p>
+            <p>Choose the tier that matches the scale of your business and the depth of collaboration you want. Each option unlocks tailored support, visibility across our channels, and priority access to association initiatives.</p>
+        </section>
+
+        <section id="tiers" class="page-section">
+            <h2>Membership Tiers</h2>
+            <div class="plan-grid">
+                <article class="plan-card">
+                    <h3>Small Business Membership</h3>
+                    <p><strong>Annual Investment:</strong> 300 Lari minimum</p>
+                    <ul>
+                        <li>Quarterly strategy clinics with association mentors</li>
+                        <li>Inclusion in our ethical dining directory and newsletter spotlights</li>
+                        <li>Discounted booth rates for regional markets and showcases</li>
+                        <li>Guidance on aligning menus and sourcing with plant-forward standards</li>
+                    </ul>
+                    <a class="cta-button" href="#next-steps">Apply Now</a>
+                </article>
+
+                <article class="plan-card">
+                    <h3>Medium Business Membership</h3>
+                    <p><strong>Annual Investment:</strong> 800 Lari</p>
+                    <ul>
+                        <li>Everything in Small Business, plus dedicated campaign planning support</li>
+                        <li>Co-branded storytelling across association media channels</li>
+                        <li>Priority speaking slots at conferences and learning labs</li>
+                        <li>Supplier matchmaking with regional organic and fair trade producers</li>
+                    </ul>
+                    <a class="cta-button" href="#next-steps">Partner With Us</a>
+                </article>
+
+                <article class="plan-card">
+                    <h3>Large Business Membership</h3>
+                    <p><strong>Annual Investment:</strong> 1,400 Lari</p>
+                    <ul>
+                        <li>Everything in Medium Business, plus customized policy advocacy briefings</li>
+                        <li>Executive roundtable access with government and NGO stakeholders</li>
+                        <li>Year-round promotional campaigns across our platforms</li>
+                        <li>Co-development of flagship sustainability initiatives and reports</li>
+                    </ul>
+                    <a class="cta-button" href="#next-steps">Schedule a Consultation</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="next-steps" class="page-section">
+            <h2>Next Steps</h2>
+            <p>Ready to finalize your membership? Complete our brief intake form and our partnerships coordinator will connect within two business days to discuss onboarding, invoicing, and your first collaborative opportunities.</p>
+            <div class="hero-cta">
+                <a class="cta-button" href="https://forms.gle">Complete Intake Form</a>
+                <a class="cta-button ghost" href="mailto:membership@ethicalfoodcaucasus.org">Email Our Team</a>
+            </div>
+            <p>If you need an invoice denominated in another currency or prefer staggered payment schedules, let us know during your intake call. We are committed to building long-term partnerships that fit your operational realities.</p>
+        </section>
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var citySelector = document.getElementById('restaurant-city');
+        if (citySelector) {
+            var cityPaths = {
+                tbilisi: 'restaurants/tbilisi-restaurants.html',
+                kutaisi: 'restaurants/kutaisi-restaurants.html',
+                batumi: 'restaurants/batumi-restaurants.html',
+                yerevan: 'restaurants/yerevan-restaurants.html'
+            };
+
+            citySelector.addEventListener('change', function(event) {
+                var city = event.target.value;
+                if (cityPaths[city]) {
+                    window.location.href = cityPaths[city];
+                }
+            });
+        }
+    });
+    </script>
+</body>
+</html>
