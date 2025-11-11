@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Membership | Ethical Food Association</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts/i18n.js" defer></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Business Membership | Ethical Food Association</title>
+        <link rel="stylesheet" href="../styles.css">
+        <script src="../scripts/i18n.js" defer></script>
+    </head>
 <body data-page="business-membership">
     <header class="site-header">
         <div class="header-inner">
@@ -16,11 +16,11 @@
             </div>
             <nav class="association-nav" aria-label="Primary Navigation">
                 <ul class="nav-links">
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#events">Events</a></li>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#events">Events</a></li>
                     <li class="nav-item nav-item-restaurants">
-                        <a href="index.html#restaurants">Restaurants</a>
+                        <a href="../index.html#restaurants">Restaurants</a>
                         <div class="restaurant-dropdown">
                             <label for="restaurant-city" class="sr-only">Choose a city to view featured restaurants</label>
                             <select id="restaurant-city" name="restaurant-city" aria-label="Choose a city to view featured restaurants">
@@ -32,7 +32,7 @@
                             </select>
                         </div>
                     </li>
-                    <li><a href="index.html#recipes">Recipes</a></li>
+                        <li><a href="../index.html#recipes">Recipes</a></li>
                     <li class="nav-item nav-item-membership">
                         <a href="business-membership.html" aria-current="page">Business Membership</a>
                         <ul class="nav-submenu">
@@ -40,7 +40,7 @@
                             <li><a href="#next-steps">Next Steps</a></li>
                         </ul>
                     </li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="language-select">
@@ -119,10 +119,10 @@
         var citySelector = document.getElementById('restaurant-city');
         if (citySelector) {
             var cityPaths = {
-                tbilisi: 'restaurants/tbilisi-restaurants.html',
-                kutaisi: 'restaurants/kutaisi-restaurants.html',
-                batumi: 'restaurants/batumi-restaurants.html',
-                yerevan: 'restaurants/yerevan-restaurants.html'
+                tbilisi: '../restaurants/tbilisi-restaurants.html',
+                kutaisi: '../restaurants/kutaisi-restaurants.html',
+                batumi: '../restaurants/batumi-restaurants.html',
+                yerevan: '../restaurants/yerevan-restaurants.html'
             };
 
             citySelector.addEventListener('change', function(event) {
